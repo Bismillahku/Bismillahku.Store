@@ -22,11 +22,13 @@
             justify-content: center;
             height: 100vh;
             margin: 0; /* Tambahkan agar tidak ada spasi default */
+            padding: 0rem 1rem;
         }
 
         .container {
-            width: 30rem;
-            height: 30rem;
+            width: 100%;
+            max-width: 30rem;
+            height: auto;
             border-radius: 0.7rem;
             background-color: white;
             display: flex;
@@ -42,6 +44,7 @@
             color: #111;
             text-align: left;
             width: 80%;
+            margin-top: 2rem;
         }
 
         p{
@@ -90,10 +93,76 @@
     <div class="container">
         <h1>Pendaftaran</h1>
         <p>hai, kenalan dulu yuk yuken user. silahkan masukan email dan passwordnya dulu ya untuk mempermudah pelacakan pesanan</p>
-        <input type="text" placeholder="Email kamu">
-        <input type="text" placeholder="kata sandi">
-        <button>Register</button>
-        <a href="#">Sudah punya akun? <div style="color: rgb(0, 102, 255);"> Login</div></a>
+        <input type="text" id="signup-email" placeholder="Email kamu">
+        <input type="password" id="signup-password" placeholder="Kata sandi">
+        <button onclick="signUp()">Register</button>
+        <a href="Login.html">Sudah punya akun? <div style="color: rgb(0, 102, 255);"> Login</div></a>
     </div>
+
+    <script type="module">
+        // Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA3pGC6cnB_s-XRszV_Sk2RqRBnQmPBgz4",
+            authDomain: "bismillahku-store.firebaseapp.com",
+            projectId: "bismillahku-store",
+            storageBucket: "bismillahku-store.firebasestorage.app",
+            messagingSenderId: "447421312149",
+            appId: "1:447421312149:web:0e894622d9fc8a1980ff9c",
+            measurementId: "G-SYERYFKEYP"
+        };
+
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Pendaftaran akun
+        window.signUp = () => {
+            const email = document.getElementById("signup-email").value;
+            const password = document.getElementById("signup-password").value;
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                console.log("Akun berhasil dibuat:", userCredential.user);
+                alert("Akun berhasil dibuat!");
+            })
+            .catch((error) => {
+                alert("Gagal daftar: " + error.message);
+            });
+        };
+
+        // Login
+        window.login = () => {
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                console.log("Login berhasil:", userCredential.user);
+                alert("Login berhasil!");
+            })
+            .catch((error) => {
+                alert("Gagal login: " + error.message);
+            });
+        };
+
+        // Logout
+        window.logout = () => {
+            signOut(auth).then(() => {
+            alert("Logout berhasil");
+            });
+        };
+
+        // Status login
+        onAuthStateChanged(auth, (user) => {
+            const status = document.getElementById("status");
+            if (user) {
+            status.innerText = `Login sebagai: ${user.email}`;
+            } else {
+            status.innerText = "Belum login";
+            }
+        });
+        </script>
+
 </body>
 </html>
