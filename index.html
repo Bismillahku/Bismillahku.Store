@@ -1,26 +1,99 @@
-<form id="form">
-  <input type="text" name="nama" id="nama" required>
-  <button type="submit">Kirim</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Yuken Store</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-<script>
-document.getElementById("form").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const nama = document.getElementById("nama").value;
+        body {
+            background-color: #111;
+            /* background-image: url("loginbg.jpg"); */
+            background-position: bottom center; /* atau 'center bottom' */
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0; /* Tambahkan agar tidak ada spasi default */
+        }
 
-  fetch("https://script.google.com/macros/s/AKfycbzx9P-QjOwd5S9rRPCV7ZK3d3eSRPT_RCyZ4wTMTIvsGo6f6gHbI1A9grLQXG-41KU/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({ nama: nama }) // Penting!
-  })
-  .then(response => response.text())
-  .then(result => {
-    alert("Sukses: " + result);
-  })
-  .catch(error => {
-    alert("Error: " + error);
-  });
-});
-</script>
+        .container {
+            width: 30rem;
+            height: 30rem;
+            border-radius: 0.7rem;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 1rem;
+        }
+
+        h1{
+            font-family: poppins;
+            font-size: 2rem;
+            color: #111;
+            text-align: left;
+            width: 80%;
+        }
+
+        p{
+            font-family: poppins;
+            font-size: 0.6rem;
+            color: #111;
+            text-align: left;
+            width: 80%;
+            margin-bottom: 2rem;
+        }
+
+        a{
+            font-family: poppins;
+            font-size: 0.8rem;
+            color: #545454;
+            margin-bottom: 2rem;
+            text-decoration: none;
+            display: flex;
+        }
+
+        input {
+            height: 3rem;
+            width: 80%;
+            border-radius: 0.25rem;
+            border: none;
+            background-color: #e7e7e7;
+            padding-left: 1rem ;
+            font-family: poppins;
+        }
+
+        button {
+            height: 3rem;
+            width: 80%;
+            border-radius: 0.25rem;
+            border: none;
+            background-color: #111;
+            color: white;
+        }
+
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pendaftaran</h1>
+        <p>hai, kenalan dulu yuk yuken user. silahkan masukan email dan passwordnya dulu ya untuk mempermudah pelacakan pesanan</p>
+        <input type="text" placeholder="Email kamu">
+        <input type="text" placeholder="kata sandi">
+        <button>Register</button>
+        <a href="#">Sudah punya akun? <div style="color: rgb(0, 102, 255);"> Login</div></a>
+    </div>
+</body>
+</html>
