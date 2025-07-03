@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Yuken Store</title>
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .scroll{
+        display: flex;
+        flex-direction: column;
+        background-color: #230443;
+        justify-content: center;
+        align-items: center;
+        overflow: auto; 
+        scrollbar-width: none;
+        -ms-overflow-style: none; 
+    }
+
+    .scroll::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 0rem;
+        background-color: #090014;
+        border-radius: 1rem;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    #nav{
+        background-color: #090014ec;
+        color: white;
+        border-radius: 0rem 0rem 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1rem;
+        width: 100%;
+        font-family: poppins;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(15px);
+    }
+
+    #nav p{
+        width: 100%;
+        font-size: 0.7rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #searchInput {
+      padding: 0.5rem 1rem;
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      border: 1px solid #7300ff;
+      border-radius: 1rem;
+      background-color: #1a0039;
+      font-family: poppins;
+      color: white;
+    }
+
+    .hero{
+        padding: 1rem;
+        width: 100%;
+    }
+    #heroCard{
+        width: 100%;
+        height: 20rem;
+        background-color: #7300ff;
+        margin: 0.5rem 0;
+        border-radius: 1rem;
+    }
+
+    .gamename {
+        width: 100%;
+        font-size: 1.5rem;
+        font-family: poppins;
+        font-weight: 700;
+        padding: 1rem 1.5rem;
+        color: white;
+        background-color: #140028;
+        border-radius: 1rem;
+        border: 2px solid #7300ff;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .card {
+        width: 100%;
+        aspect-ratio: 3 / 4;           /* Ini yang jaga rasio tetap */
+        background: #7300ff;
+        border-radius: 1rem;
+        box-shadow: 0 2px 5px #7300ff8d;
+        padding: 1rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .card p {
+      font-size: 0.8rem;
+      color: #ffffff;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer{
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        font-family: poppins;
+        width: 100%;
+        padding: 1rem;
+    }
+    .contact{
+        display: flex;
+        font-size: 0.8rem;
+        font-kerning: 2px;
+        gap: 2rem;
+    }
+    .copyright{
+        font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body class="scroll">
+    <div id="nav">
+        <h2 id="greeting">Halo, pengguna!</h2>
+        <p>selamat datang di yuken store ada yang bisa aku bantu?</p>
+        <input type="text" id="searchInput" placeholder="cari...">
+    </div>
+
+    <!-- Banner card -->
+    <div class="hero">
+        <div id="heroCard">
+            
+        </div>
+    </div>
+    
+    <main>
+        <div class="gamename">Genshin Impact</div>
+        <!-- service 01 -->
+        <div id="container">
+            <div class="card-container" id="cardContainer">
+                <!-- Game Genshin -->
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="rawat akun">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="spiral abyss">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Imaginarium Theater">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Build Character">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Material">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Explore">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Quest">
+                        <img src="" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="gamename">Honkai Starrail</div>
+        <!-- service 01 -->
+        <div id="container">
+            <div class="card-container" id="cardContainer">
+                <!-- Game Genshin -->
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="rawat akun">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="spiral abyss">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Imaginarium Theater">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Build Character">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Material">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Explore">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Quest">
+                        <img src="" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="gamename">Wuthering Wave</div>
+        <!-- service 01 -->
+        <div id="container">
+            <div class="card-container" id="cardContainer">
+                <!-- Game Genshin -->
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="rawat akun">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="spiral abyss">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Imaginarium Theater">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Build Character">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Material">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Explore">
+                        <img src="" alt="">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="card" data-title="Quest">
+                        <img src="" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="copyright">
+            <h3>Contact Us</h3>
+            <p>Powered by bismillahku</p>
+        </div>
+        <div class="contact">
+            <p>Whatsapp</p>
+            <p>Instagram</p>
+            <p>Tiktok</p>
+            <p>Facebook</p>
+        </div>
+    </footer>
+
+ 
+  <script type="module">
+
+    //fitur search
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+
+      cards.forEach(card => {
+        const title = card.getAttribute("data-title").toLowerCase();
+        if (title.includes(query)) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+
+    // Ngambil nama
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA3pGC6cnB_s-XRszV_Sk2RqRBnQmPBgz4",
+      authDomain: "bismillahku-store.firebaseapp.com",
+      projectId: "bismillahku-store",
+      storageBucket: "bismillahku-store.appspot.com",
+      messagingSenderId: "447421312149",
+      appId: "1:447421312149:web:0e894622d9fc8a1980ff9c"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Cek status login
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const name = user.displayName || user.email.split("@")[0];
+        document.getElementById("greeting").innerText = `Halo, ${name}!`;
+      } else {
+        // Belum login, arahkan ke halaman login
+        window.location.href = "register.html";
+      }
+    });
+
+    window.logout = () => {
+      signOut(auth).then(() => {
+        window.location.href = "register.html";
+      });
+    };
+  </script>
+</body>
+</html>
